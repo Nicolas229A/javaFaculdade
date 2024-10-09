@@ -1,30 +1,56 @@
 package aula3;
 
 public class Animal {
+
+    private String nome;
+    private String especie;
+    private int idade;
+    private int peso;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEspecie () {
+        return especie;
+    }
+
+    public void setEspecie(String especie) {
+        this.especie = especie;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    public int getPeso() {
+        return peso;
+    }
+
+    public void setPeso(int peso) {
+        this.peso = peso;
+    }
+
+    public Animal() {
+
+    }
+
+    public Animal(String nome, String especie, int idade, int peso) {
+        this.nome = nome;
+        this.especie = especie;
+        this.idade = idade;
+        this.peso = peso;
+    }
+
+    public String toString() {
+        return "Animal{" + "nome=" + nome + ", especie=" + especie + ", idade=" + idade + ", peso=" + peso + '}';
+    }
 }
-
-/*
-Lista 2
-
-1) Crie as classes solicitadas com os atributos, construtores, getters, setters e o toString. (Não se
-esqueça de fazer o encapsulamento correto)
-Animal:
-String Nome
-String especie
-Int idade
-Int peso
-
-Obra de Arte:
-Int id
-String nome
-String autor
-String localizacao
-double valor
-int ano
-
-2) Com as classes do exercício 1, faça um programa que crie 3 objetos animais e apresente a média
-dos pesos dos animais.
-
-3) Com as classes do exercício 1, faça um programa que crie 3 objetos obra de arte e apresente as
-obras criadas após o ano de 2020.
- */
