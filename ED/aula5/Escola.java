@@ -30,7 +30,6 @@ public class Escola {
                         
                         Aluno novoAluno = new Aluno();
                         System.out.println("Qual o código do aluno? ");
-//                        scanner.nextLine();
                         novoAluno.codigo = scanner.nextInt();
 
                         //Esse novo aluno está no topo da linha
@@ -40,19 +39,98 @@ public class Escola {
 
                     case 2:
 
+                        int codigo;
+                        int contTemp = 0;
+                        consultor = alunoNoTopo;
+                        if (alunoNoTopo == null) {
+                            System.out.println("Não há alunos!");
+                        } else {
+                            System.out.println("Qual o código deste aluno?");
+                            codigo = scanner.nextInt();
+                            while (consultor != null) {
+                                if (consultor.codigo == codigo) {
+                                    System.out.println("Endereço de memória: " + consultor);
+                                    System.out.println("Código: " + consultor.codigo);
+                                    System.out.println("======");
+                                    System.out.println("Cadastre a nota deste aluno");
+                                    consultor.nota = scanner.nextDouble();
+                                    contTemp++;
+                                }
+                                    consultor = consultor.alunoAbaixoDeste;
+                            }
+                            if (contTemp == 0) {
+                                System.out.println("Esse aluno não está cadastrado!");
+                            }
+                        }
+                        break;
 
                     case 3:
 
+                        double somaDasNotas = 0;
+                        int numeroDeAlunos = 0;
+                        consultor = alunoNoTopo;
+                        if (alunoNoTopo == null) {
+                            System.out.println("Não há alunos!");
+                        } else {
+                            while (consultor != null) {
+                                if (consultor.nota != 0) {
+                                    somaDasNotas += consultor.nota;
+                                    numeroDeAlunos++;
+                                }
+                                    consultor = consultor.alunoAbaixoDeste;
+                                }
+                            }
+                        if (numeroDeAlunos > 0) {
+                            System.out.println("A Média das notas é: " + somaDasNotas / numeroDeAlunos);
+                        } else  {
+                            System.out.println("Não há alunos com notas cadastradas!");
+                        }
+                        break;
 
                     case 4:
-
+                        consultor = alunoNoTopo;
+                        if (alunoNoTopo == null) {
+                            System.out.println("Não há alunos!");
+                        } else {
+                            while (consultor != null) {
+                                    System.out.println("Endereço de memória: " + consultor);
+                                    System.out.println("Código: " + consultor.codigo);
+                                    System.out.println("Nota: " + consultor.nota);
+                                    System.out.println("======");
+                                    consultor = consultor.alunoAbaixoDeste;
+                                }
+                            }
+                        break;
 
                     case 5:
-
+                        int codigo2;
+                        int contTemp2 = 0;
+                        consultor = alunoNoTopo;
+                        if (alunoNoTopo == null) {
+                            System.out.println("Não há alunos!");
+                        } else {
+                            System.out.println("Qual o código deste aluno?");
+                            codigo2 = scanner.nextInt();
+                            while (consultor != null) {
+                                if (consultor.codigo == codigo2) {
+                                    System.out.println("Aluno está cadastrado!");
+                                    contTemp2++;
+                                }
+                                consultor = consultor.alunoAbaixoDeste;
+                            }
+                            if (contTemp2 == 0) {
+                                System.out.println("Esse aluno não está cadastrado!");
+                            }
+                        }
+                        break;
 
                     case 6:
-
-
+                        if (alunoNoTopo == null) {
+                            System.out.println("Todos os alunos JÁ foram excluídos!");
+                        } else {
+                            alunoNoTopo = alunoNoTopo.alunoAbaixoDeste;
+                        }
+                        break;
                     case 7:
                         System.out.println("Até mais Professor!");
                         break;    
