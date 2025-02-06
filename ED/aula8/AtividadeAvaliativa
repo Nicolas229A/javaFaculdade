@@ -1,0 +1,41 @@
+Partindo do código implementado em Java de uma lista SENO (Simplesmente
+Encadeada Não Ordenada, crie um programa que faça a leitura e soma de
+números inteiros e positivos que podem ser absurdamente grandes;
+
+Para facilitar a implementação, a primeira quantidade de algarismos deve ser
+menor que a segunda;
+
+O trabalho será dividido em 3 etapas:
+(5,0) 1ª etapa: todos os algarismos menores ou iguais a 4 (para não ter o “leva
+um”);
+(3,0) 2ª etapa: qualquer algarismo no meio ou no final (nesse caso ocorre o
+“leva um” sem adicionar mais uma posição no início;
+(2,0) 3ª etapa: com algarismos maiores que nove no início;
+
+------------------------------------------------------------------------------------
+
+1. Ler a primeira string de algarismos;
+
+2. Percorrer a string colocando cada caractere em uma posição de uma lista;
+
+3. Ler a segunda string de algarismos;
+
+4. Percorrer a segunda string colocando cada caractere em uma posição de uma
+outra lista;
+
+5. Percorrer a primeira ou a segunda lista somando e inserindo o resultado na
+terceira lista. Sugestão: crie o método somar() que recebe como parâmetro a
+primeira e a segunda lista e, após realizar as somas, retorna a terceira lista com
+os resultados;
+
+------------------------------------------------------------------------------------
+
+Exemplo:
+
+1023012203013010323010230120301230010230120310230120310340134012034010341043201204102401041024301342020
++
+1231023012401301403401203102301340130410340130410340130410340130410340130410340130341034013041034013041034013401034013041034013401034301
+=
+1231023012401301403401203102301341153422543143420663140640460431640350360530650360461344353175046047051375056602238115442075037702376321
+
+
